@@ -9,24 +9,31 @@ namespace MVCfriend.Models
     public class Friend
     {
         public enum TipoFriend {
-            Conocido,
-            CompaneroEstudio,
-            ColegaDeTrabajo,
-            Amigo,
-            AmigoDeInfancia,
-            Pariente
+            Conocido,//0
+            CompaneroEstudio,//1
+            ColegaDeTrabajo,//2
+            Amigo,//3
+            AmigoDeInfancia,//4
+            Pariente//5
         }
         [Key]
+     
         public int FriendId { get; set; }
 
-        [Required]
+
+    [Required]
+        [Display(Name = "NombreCompleto")]
         public string Name { get; set; }
-        
+
+        [Display(Name = "Apodo")] 
         public string Nickname { get; set; }
 
+        [Display(Name = "Cumpleanos")]
+        
         public DateTime Birthdate { get; set; }
 
         [Required]
+        [Display(Name = "Tipo Amigo")]
         public TipoFriend Type { get; set; }
 
 
